@@ -248,23 +248,23 @@ let myDart = darts.create(img`
 let myEnemy = sprites.create(img`
     . . . . . f f f f f . . . 
     . . . f f f f f f f f f . 
-    . . f f f c f f f f f f . 
-    . . f f c f f f c f f f f 
-    f f c c f f f c c f f c f 
-    f f f f f e f f f f c c f 
+    . . f f f 2 f f f f f f . 
+    . . f f 2 f f f 2 f f f f 
+    f f 2 2 f f f 2 2 f f 2 f 
+    f f f f f e f f f f 2 2 f 
     . f f f e e f f f f f f f 
-    . . f f e e f b f e e f f 
-    . . . f 4 4 f 1 e 4 e f . 
-    . . . f 4 4 4 4 e f f f . 
+    . . f f e e f 2 f e e f f 
+    . . . f 2 2 f 2 e 2 e f . 
+    . . . f 2 2 2 2 e f f f . 
     . . . f f e e e e e f . . 
-    . . . f 7 7 7 e 4 4 e . . 
-    . . . f 7 7 7 e 4 4 e . . 
+    . . . f 2 2 2 e 2 2 e . . 
+    . . . f 2 2 2 e 2 2 e . . 
     . . . f 6 6 6 f e e f . . 
     . . . . f f f f f f . . . 
     . . . . . . f f f . . . . 
     `, SpriteKind.Enemy)
 timer.after(15000, function () {
-    game.over(true, effects.confetti)
+    game.over(true, effects.melt)
 })
 timer.after(13000, function () {
     DeadSprite = sprites.create(img`
@@ -298,4 +298,7 @@ mySprite.setPosition(3, 57)
 myEnemy.setPosition(152, 55)
 game.onUpdateInterval(2000, function () {
     myEnemy.follow(projectile)
+})
+game.onUpdateInterval(13000, function () {
+    myEnemy.follow(DeadSprite)
 })
