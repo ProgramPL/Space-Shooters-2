@@ -1,23 +1,6 @@
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    scene.cameraShake(6, 100)
-    projectile = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . 4 4 . . . . . . . 
-        . . . . . . 4 5 5 4 . . . . . . 
-        . . . . . . 2 5 5 2 . . . . . . 
-        . . . . . . . 2 2 . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, mySprite, 100, -10)
+    scene.cameraShake(5, 50)
+    projectile = sprites.createProjectileFromSprite(assets.image`Fyre`, mySprite, 100, -10)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
@@ -309,4 +292,7 @@ game.onUpdateInterval(2000, function () {
 })
 game.onUpdateInterval(13000, function () {
     myEnemy.follow(DeadSprite)
+})
+forever(function () {
+    tiles.placeOnRandomTile(myEnemy, assets.tile`transparency16`)
 })
