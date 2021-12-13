@@ -1,6 +1,7 @@
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     scene.cameraShake(5, 50)
     projectile = sprites.createProjectileFromSprite(assets.image`Fyre`, mySprite, 100, -10)
+    music.pewPew.play()
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
@@ -61,6 +62,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             . . . . . . . . . . . . . . . . 
             `, mySprite, 100, -10)
     })
+    scene.cameraShake(5, 50)
+    music.pewPew.play()
 })
 let projectile: Sprite = null
 let DeadSprite: Sprite = null
@@ -287,9 +290,12 @@ timer.after(19000, function () {
 })
 mySprite.setPosition(3, 57)
 timer.after(17000, function () {
-    scene.setBackgroundImage(assets.image`BlackScreen`)
+    scene.setBackgroundImage(assets.image`moon`)
 })
 myEnemy.setPosition(152, 55)
+game.onUpdate(function () {
+	
+})
 game.onUpdateInterval(2000, function () {
     myEnemy.follow(projectile)
 })
