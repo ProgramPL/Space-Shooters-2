@@ -1,7 +1,7 @@
  
 
 
-> Open this page at [https://daddyprogram.github.io/space-shooters-2/](https://daddyprogram.github.io/space-shooters-2/)
+> Open this page at [https://programpl.github.io/space-shooters-2/](https://program.github.io/space-shooters-2/)
 
 ## Use as Extension
 
